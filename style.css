@@ -21,7 +21,7 @@ header{
 }
 #blog-btn{
     width: 120px;
-height: 38px;
+height: 40px;
 border: 0px;
 background-color: #0f63fd;
 border-radius: 5px;
@@ -48,12 +48,19 @@ color: white;
 }
 
 .cart{
-    background: gray;
     border-radius: 5px;
+    border: 1px solid rgb(180, 178, 178);
 }
 .cart-body{
     width: 245px;
-    margin: 20px auto;
+    margin: 18px auto;
+}
+.cart-img{
+    height: 190px;
+}
+.cart-img img{
+    height: 100%;
+    width: 100%;
 }
 .text-center{
     text-align: center;
@@ -89,3 +96,26 @@ background: #F1F1F1;
 .cart-calculation{
     width: 290px;
 }
+.calculation-heading{
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 0px;
+    color: rgba(17, 17, 17, 0.8);
+}
+#list-items{
+    padding-left: 0px;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0px;
+}
+.convert-btn{
+    height: 40px;
+    border: 0px;
+    background-color: #0f63fd;
+    border-radius: 5px;
+    color: white;
+}
+
