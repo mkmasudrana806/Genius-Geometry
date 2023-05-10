@@ -4,36 +4,25 @@ for (const traingle of traingles) {
   traingle.addEventListener("click", function (event) {
     // select parent node by target
     const parentNode = event.target.parentNode;
-    const geometryNameElement = parentNode.querySelector(".geometry-name");
+    const geometryName = parentNode.querySelector(".geometry-name").innerText;
 
-    // get first and second input field value
-    const firstInputField = parentNode.querySelector(".input-first");
-    const secondInputField = parentNode.querySelector(".input-second");
-    const firstValue = getInputTextByElement(firstInputField);
-    const secondValue = getInputTextByElement(secondInputField);
+    // check that alreay this geometry remain or not
+    const res = isFound(geometryName);
+    if (res) {
+      alert("Already added to calculation list!");
+    } else {
+      // get first and second input field value
+      const firstValue = getInputValue(parentNode, "first-input");
+      const secondValue = getInputValue(parentNode, "second-input");
 
-    // calculate area of this target traingle
-    const area = calculateGeometryArea(
-      geometryNameElement.innerText,
-      firstValue,
-      secondValue
-    );
+      // calculate area of this target traingle
+      const area = calculateGeometryArea(geometryName, firstValue, secondValue);
 
-    // create element and appendchild to the calculation list
-    const list = document.getElementById("list-items");
-    const li = document.createElement("li");
-    li.innerHTML = `
-    <div class="list-item">
-      <p>${geometryNameElement.innerText}</p>
-      <p>${area}cm<sup>2</sup></p>
-      <button class="convert-btn">Convert to m<sup>2</sup></button>
-      <i class="fa-solid fa-xmark cancel-btn"></i>
-    </div>
- `;
-    list.appendChild(li);
+      // create element and appendchild to the calculation list
+      addToCalculationList(geometryName, area);
+    }
   });
 }
-
 
 // event handler for cancel any traingle calculation from the area calculation list
 document
