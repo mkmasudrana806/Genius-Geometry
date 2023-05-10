@@ -45,11 +45,12 @@ color: white;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 20px;
     column-gap: 20px;
+    height: max-content;
 }
 
 .cart{
     border-radius: 5px;
-    border: 1px solid rgb(180, 178, 178);
+    border: 1px solid rgba(17, 17, 17, 0.1);
 }
 .cart-body{
     width: 245px;
@@ -109,7 +110,10 @@ background: #F1F1F1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 0px;
+    padding: 10px 2px;
+}
+.list-item:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .convert-btn{
     height: 40px;
@@ -118,4 +122,20 @@ background: #F1F1F1;
     border-radius: 5px;
     color: white;
 }
+.convert-btn:hover{
+    background-color: #013bfa;
+    border-radius: 5px;
+}
 
+.fa-xmark{
+    color: red;
+    font-size: large;
+    height:25px;
+    width: 27px;
+   text-align: center;
+   padding-top: 5px;
+}
+.fa-xmark:hover{
+    background-color: rgb(221, 220, 220);
+    border-radius: 5px;
+}

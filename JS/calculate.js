@@ -27,8 +27,18 @@ for (const traingle of traingles) {
       <p>${geometryNameElement.innerText}</p>
       <p>${area}cm<sup>2</sup></p>
       <button class="convert-btn">Convert to m<sup>2</sup></button>
+      <i class="fa-solid fa-xmark cancel-btn"></i>
     </div>
  `;
     list.appendChild(li);
   });
 }
+
+
+// event handler for cancel any traingle calculation from the area calculation list
+document
+  .getElementById("list-items")
+  .addEventListener("click", function (event) {
+    const parent = event.target.parentNode.parentNode;
+    parent.remove(parent);
+  });
