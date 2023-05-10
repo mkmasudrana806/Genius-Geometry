@@ -31,3 +31,23 @@ document
     const parent = event.target.parentNode.parentNode;
     parent.remove(parent);
   });
+
+// generate random number between 0 to 256
+function randomNumber() {
+  return Math.round(Math.random() * 257);
+}
+
+// event handler for making random background 
+const carts = document.getElementsByClassName("cart");
+for (const cart of carts) {
+  cart.addEventListener("mouseenter", function () {
+    cart.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+  });
+}
+// event handler for remove background color when mouse is leave from cart 
+const cartses = document.getElementsByClassName("cart");
+for (const cart of cartses) {
+  cart.addEventListener("mouseleave", function () {
+    cart.style.backgroundColor = "white";
+  });
+}
