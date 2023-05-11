@@ -20,18 +20,6 @@ function calculateGeometryArea(name, firstValue, secondValue) {
   return result;
 }
 
-// check already triangle is remain or not
-function isFound(geometryName) {
-  const parentContainer = document.getElementById("list-items");
-  const lists = parentContainer.querySelectorAll(".geometryName");
-  for (const list of lists) {
-    if (list.innerText === geometryName) {
-      return true;
-    }
-  }
-  return false;
-}
-
 // create li element and then added to the list
 function addToCalculationList(geometryName, area) {
   const list = document.getElementById("list-items");
@@ -73,34 +61,45 @@ function getInputValue(parentNode, sign) {
   }
 }
 
+// check edit icon already found or not. because when each time calculate button is clicked then each time edit icon will added if i not check this
+
+function isEditIconFound(parentNode) {
+  const check = parentNode.querySelector(".edit-icon");
+  if (check) {
+    return true;
+  } else {
+    return false;
+  }
+}
 // add edit icon and checkbox icon
 function addEditIcon(parentNode, firstInputValue, secondInputValue) {
   const child1 = parentNode.children[1];
   const div = document.createElement("div");
   div.classList.add("edit-section");
   div.innerHTML = `
- <p>b = <span>${firstInputValue}</span>cm</p>
- <p>b = <span>${secondInputValue}</span>cm</p>
- <p><i id="edit-icon" class="fa-solid fa-pen-to-square"></i></p>
- <p><input type="checkbox" name="checkbox" id="check-box"></p>
-
+ <p>b = <span id="first-value">${firstInputValue}</span>cm</p>
+ <p>b = <span id="second-value">${secondInputValue}</span>cm</p>
+ <p><i class="fa-solid fa-pen-to-square edit-icon"></i></p>
+ <p><input type="checkbox" name="checkbox" class="check-box"></p>
  `;
   parentNode.insertBefore(div, child1);
   const inputField = parentNode.querySelector(".input-field");
   inputField.style.display = "none";
-  const checkBox = document.getElementById("check-box");
+  const checkBox = parentNode.querySelector(".check-box");
   checkBox.style.display = "none";
 }
 
 let isDisabled = false;
 function setHandlerEditIcon(parentNode) {
   // event halder for edit button
-  document.getElementById("edit-icon").addEventListener("click", function () {
-    const checkBox = document.getElementById("check-box");
+  const editIcon = parentNode.querySelector(".edit-icon");
+  editIcon.addEventListener("click", function () {
+    isDisabled = !isDisabled;
+    const checkBox = parentNode.querySelector(".check-box");
     const inputField = parentNode.querySelector(".input-field");
     const inputFirst = parentNode.querySelector(".input-first");
     const inputSecond = parentNode.querySelector(".input-second");
-    isDisabled = !isDisabled;
+
     if (isDisabled) {
       checkBox.style.display = "block";
       inputField.classList.add("input-field-block");
@@ -110,6 +109,25 @@ function setHandlerEditIcon(parentNode) {
       checkBox.style.display = "none";
       inputField.style.display = "none";
       inputField.classList.remove("input-field-block");
+    }
+  });
+}
+
+let isOpenCheckBox = false;
+function setHandlerCheckBox(parentNode) {
+  // event halder for check box
+  const checkBox = parentNode.querySelector(".check-box");
+  checkBox.addEventListener("click", function () {
+    isOpenCheckBox = !isOpenCheckBox;
+    const inputFirst = parentNode.querySelector(".input-first");
+    const inputSecond = parentNode.querySelector(".input-second");
+
+    if (isOpenCheckBox) {
+      inputFirst.disabled = false;
+      inputSecond.disabled = false;
+    } else if (!isOpenCheckBox) {
+      inputFirst.disabled = true;
+      inputSecond.disabled = true;
     }
   });
 }

@@ -75,9 +75,17 @@ margin-bottom: 5px;
     justify-content: center;
     justify-content: space-evenly;
 }
-#check-box{
-
+.check-box{
+width: 17px;
+height:17px;
 }
+.check-box:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.edit-icon:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* two input field  */
 .input-field{
     display: flex;
     justify-content: space-between;
@@ -115,7 +123,6 @@ background: #F1F1F1;
 .cart-calculation{
     width: 290px;
     border: 1px solid rgba(17, 17, 17, 0.1);
-    height: 415px;
 }
 .calculation-heading{
     text-align: center;

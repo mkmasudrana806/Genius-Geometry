@@ -6,32 +6,28 @@ for (const traingle of traingles) {
     const parentNode = event.target.parentNode;
     const geometryName = parentNode.querySelector(".geometry-name").innerText;
 
-    // check that alreay this geometry remain or not
-    const res = isFound(geometryName);
-    if (res) {
-      alert("Already added This calculation to the list!");
-    } else {
-      // get first and second input field value
-      const firstValue = getInputValue(parentNode, "first-input");
-      const secondValue = getInputValue(parentNode, "second-input");
+    // get first and second input field value
+    const firstValue = getInputValue(parentNode, "first-input");
+    const secondValue = getInputValue(parentNode, "second-input");
 
-      // calculate area of this target traingle
-      const area = calculateGeometryArea(geometryName, firstValue, secondValue);
-      if (area) {
-        // create element and appendchild to the calculation list
-        addToCalculationList(geometryName, area);
-
+    // calculate area of this target traingle
+    const area = calculateGeometryArea(geometryName, firstValue, secondValue);
+    if (area) {
+      // create element and appendchild to the calculation list
+      addToCalculationList(geometryName, area);
+      const checkEditIcon = isEditIconFound(parentNode);
+      if (!checkEditIcon) {
         // add edit icon and checkbox and one paragraph with input field value
         addEditIcon(parentNode, firstValue, secondValue);
-        /* set event handler to the cancel button in calculation section 
-        why i am doing this inside calculate handler ? 
-        answer: after added one triangle to the calculation list. then i am adding event listener by loop. when each time triangle is added then this loop will be run again. and then as well as event listener behind the calculation list is added.
-        */
-        // set event listener behind the each item of calculation list
-        setHandlerCancelBtn();
-        setHandlerEditIcon(parentNode);
-        
+      } else {
+        // if already found edit then need to just update value of edit icon paralal line paragraph value
+        parentNode.querySelector("#first-value").innerText = firstValue;
+        parentNode.querySelector("#second-value").innerText = secondValue;
       }
+      // set event handler to the cancel button in calculation section
+      setHandlerEditIcon(parentNode);
+      setHandlerCheckBox(parentNode);
+      setHandlerCancelBtn();
     }
   });
 }
