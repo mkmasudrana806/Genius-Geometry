@@ -37,7 +37,6 @@ color: white;
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
-   
 }
 .carts{
     width: 890px;
@@ -47,7 +46,7 @@ color: white;
     column-gap: 20px;
     height: max-content;
 }
-
+/* single cart  */
 .cart{
     border-radius: 5px;
     border: 1px solid rgba(17, 17, 17, 0.1);
@@ -63,9 +62,23 @@ color: white;
     height: 100%;
     width: 100%;
 }
+.geometry-name{
+margin-bottom: 5px;
+}
 .text-center{
     text-align: center;
 }
+
+/* edit icon section  */
+.edit-section{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.check-box{
+    display: none;
+}
+
 .input-field{
     display: flex;
     justify-content: space-between;
@@ -96,15 +109,20 @@ background: #F1F1F1;
 /* cart calculation section  */
 .cart-calculation{
     width: 290px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    height: 415px;
 }
 .calculation-heading{
     text-align: center;
     text-decoration: underline;
-    margin-top: 0px;
+    margin-top: 10px;
     color: rgba(17, 17, 17, 0.8);
 }
 #list-items{
     padding-left: 0px;
+}
+#list-items li{
+    margin-left: 20px;
 }
 .list-item{
     display: flex;
@@ -115,6 +133,8 @@ background: #F1F1F1;
 .list-item:hover{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+/* convert button and xmark hover effect  */
 .convert-btn{
     height: 40px;
     border: 0px;

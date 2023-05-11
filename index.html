@@ -24,6 +24,7 @@
     <main>
       <section>
         <div class="cartAndCalculation">
+          <!-- all the carts section  -->
           <div class="carts">
             <div class="cart">
               <div class="cart-body">
@@ -33,6 +34,7 @@
                 <div class="cart-info">
                   <h2 class="text-center geometry-name">Triangle</h2>
                   <p class="text-center">Area (A) = 0.5 * b * h</p>
+                  
                   <div class="input-field">
                     <input class="input-first" type="text" placeholder="b" />
                     <p>cm</p>
@@ -43,13 +45,104 @@
                 </div>
               </div>
             </div>
+            <div class="cart">
+              <div class="cart-body">
+                <div class="cart-img">
+                  <img src="images/rectangle.png" alt="" />
+                </div>
+                <div class="cart-info">
+                  <h2 class="text-center geometry-name">Rectangle</h2>
+                  <p class="text-center">Area (A) = w * l</p>
+                  <div class="input-field">
+                    <input class="input-first" type="text" placeholder="w" />
+                    <p>cm</p>
+                    <input class="input-second" type="text" placeholder="l" />
+                    <p>cm</p>
+                  </div>
+                  <button class="calculate-btn">Calculate</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart">
+              <div class="cart-body">
+                <div class="cart-img">
+                  <img src="images/parallelogram.png" alt="" />
+                </div>
+                <div class="cart-info">
+                  <h2 class="text-center geometry-name">Parallelogram</h2>
+                  <p class="text-center">Area (A) = b * h</p>
+                  <div class="input-field">
+                    <input class="input-first" type="text" placeholder="b" />
+                    <p>cm</p>
+                    <input class="input-second" type="text" placeholder="h" />
+                    <p>cm</p>
+                  </div>
+                  <button class="calculate-btn">Calculate</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart">
+              <div class="cart-body">
+                <div class="cart-img">
+                  <img src="images/rhombus.png" alt="" />
+                </div>
+                <div class="cart-info">
+                  <h2 class="text-center geometry-name">Rhombus</h2>
+                  <p class="text-center">
+                    Area (A) = 0.5 * d<sub>1</sub> * d<sub>2</sub>
+                  </p>
+                  <div class="input-field">
+                    <input class="input-first" type="text" placeholder="d1" />
+                    <p>cm</p>
+                    <input class="input-second" type="text" placeholder="d2" />
+                    <p>cm</p>
+                  </div>
+                  <button class="calculate-btn">Calculate</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart">
+              <div class="cart-body">
+                <div class="cart-img">
+                  <img src="images/pentagon.png" alt="" />
+                </div>
+                <div class="cart-info">
+                  <h2 class="text-center geometry-name">Pentagon</h2>
+                  <p class="text-center">Area (A) = 0.5 * p * b</p>
+                  <div class="input-field">
+                    <input class="input-first" type="text" placeholder="p" />
+                    <p>cm</p>
+                    <input class="input-second" type="text" placeholder="b" />
+                    <p>cm</p>
+                  </div>
+                  <button class="calculate-btn">Calculate</button>
+                </div>
+              </div>
+            </div>
+            <div class="cart">
+              <div class="cart-body">
+                <div class="cart-img">
+                  <img src="images/triangle.png" alt="" />
+                </div>
+                <div class="cart-info">
+                  <h2 class="text-center geometry-name">Ellipse</h2>
+                  <p class="text-center">Area (A) = (&pi;) * a * b</p>
+                  <div class="input-field">
+                    <input class="input-first" type="text" placeholder="a" />
+                    <p>cm</p>
+                    <input class="input-second" type="text" placeholder="b" />
+                    <p>cm</p>
+                  </div>
+                  <button class="calculate-btn">Calculate</button>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- cart calculation section  -->
           <div class="cart-calculation">
             <h2 class="calculation-heading">Area Calculation</h2>
             <div id="calculation-list">
-              <ol id="list-items">
-                <button id="check">Check </button>
-              </ol>
+              <ol id="list-items"></ol>
             </div>
           </div>
         </div>
