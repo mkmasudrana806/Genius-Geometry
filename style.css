@@ -75,15 +75,20 @@ margin-bottom: 5px;
     justify-content: center;
     justify-content: space-evenly;
 }
-.check-box{
-    display: none;
-}
+#check-box{
 
+}
 .input-field{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.input-field-block {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .input-first, .input-second{
 width:80px;
 height: 32px;

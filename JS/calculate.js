@@ -23,18 +23,18 @@ for (const traingle of traingles) {
 
         // add edit icon and checkbox and one paragraph with input field value
         addEditIcon(parentNode, firstValue, secondValue);
+        /* set event handler to the cancel button in calculation section 
+        why i am doing this inside calculate handler ? 
+        answer: after added one triangle to the calculation list. then i am adding event listener by loop. when each time triangle is added then this loop will be run again. and then as well as event listener behind the calculation list is added.
+        */
+        // set event listener behind the each item of calculation list
+        setHandlerCancelBtn();
+        setHandlerEditIcon(parentNode);
+        
       }
     }
-    /* set event handler to the cancel button in calculation section 
- why i am doing this inside calculate handler ? 
- answer: after added one triangle to the calculation list. then i am adding event listener by loop. when each time triangle is added then this loop will be run again. and then as well as event listener behind the calculation list is added.
- */
-    // set event listener behind the each item of calculation list
-    setHandlerCancelBtn();
   });
 }
-
-// event handler for cancel any traingle calculation from the area calculation list
 
 // generate random number between 0 to 256
 function randomNumber() {

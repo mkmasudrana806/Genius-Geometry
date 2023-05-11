@@ -81,10 +81,35 @@ function addEditIcon(parentNode, firstInputValue, secondInputValue) {
   div.innerHTML = `
  <p>b = <span>${firstInputValue}</span>cm</p>
  <p>b = <span>${secondInputValue}</span>cm</p>
- <p><i class="fa-solid fa-pen-to-square"></i></p>
- <p><i class="fa-regular fa-square-check check-box"></i></p>
+ <p><i id="edit-icon" class="fa-solid fa-pen-to-square"></i></p>
+ <p><input type="checkbox" name="checkbox" id="check-box"></p>
+
  `;
   parentNode.insertBefore(div, child1);
   const inputField = parentNode.querySelector(".input-field");
   inputField.style.display = "none";
+  const checkBox = document.getElementById("check-box");
+  checkBox.style.display = "none";
+}
+
+let isDisabled = false;
+function setHandlerEditIcon(parentNode) {
+  // event halder for edit button
+  document.getElementById("edit-icon").addEventListener("click", function () {
+    const checkBox = document.getElementById("check-box");
+    const inputField = parentNode.querySelector(".input-field");
+    const inputFirst = parentNode.querySelector(".input-first");
+    const inputSecond = parentNode.querySelector(".input-second");
+    isDisabled = !isDisabled;
+    if (isDisabled) {
+      checkBox.style.display = "block";
+      inputField.classList.add("input-field-block");
+      inputFirst.disabled = true;
+      inputSecond.disabled = true;
+    } else if (!isDisabled) {
+      checkBox.style.display = "none";
+      inputField.style.display = "none";
+      inputField.classList.remove("input-field-block");
+    }
+  });
 }
