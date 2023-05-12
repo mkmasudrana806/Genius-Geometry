@@ -64,3 +64,8 @@ for (const cart of cartses) {
     cart.style.backgroundColor = "white";
   });
 }
+
+// redirect blog html page
+document.getElementById("blog-btn").addEventListener("click", function () {
+  window.location.href = "/JS/blog.html";
+});

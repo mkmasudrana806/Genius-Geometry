@@ -175,3 +175,28 @@ background: #F1F1F1;
     background-color: rgb(221, 220, 220);
     border-radius: 5px;
 }
+
+
+/* media query for for mobile phone  */
+@media screen and  (max-width: 576px) {
+    header{
+        width: 100%;
+    }
+    .cartAndCalculation{
+        flex-direction: column;
+        width: max-content;
+    }
+    .carts{
+        width: max-content;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cart{
+        width: 245px;
+        padding: 20px;
+    }
+    .cart-calculation{
+        margin-top: 50px;
+        height: max-content;
+    }
+  }
+  

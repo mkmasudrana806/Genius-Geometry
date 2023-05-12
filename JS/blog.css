@@ -14,3 +14,12 @@ main{
     margin-bottom: 20px;
     padding: 20px;
 }
+
+/* media query for for mobile phone  */
+@media screen and  (max-width: 576px) {
+    main{
+        width: 400px;
+        margin: 0 auto;
+    }
+  }
+  
