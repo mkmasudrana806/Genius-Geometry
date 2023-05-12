@@ -22,4 +22,17 @@ main{
         margin: 0 auto;
     }
   }
-  
+    /* media query for for tablet device  */
+@media screen and  (min-width: 577px) and (max-width:900px) {
+main{
+    width:600px ;
+    margin: 0 auto;
+}
+}
+  /* media query for for laptop device  */
+  @media screen and  (min-width: 901px) and (max-width:1250px) {
+  main{
+    width: 900px;
+    margin: 0 auto;
+  }
+}

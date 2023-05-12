@@ -191,7 +191,7 @@ background: #F1F1F1;
         grid-template-columns: repeat(1, 1fr);
     }
     .cart{
-        width: 245px;
+        width: 260px;
         padding: 20px;
     }
     .cart-calculation{
@@ -200,3 +200,33 @@ background: #F1F1F1;
     }
   }
   
+
+  /* media query for for tablet device  */
+@media screen and  (min-width: 577px) and (max-width:900px) {
+    header{
+        width: 100%;
+    }
+.cartAndCalculation{
+    width: 600px;
+    margin: 50px auto;
+}
+.carts{
+    width:290px;
+    grid-template-columns: repeat(1, 1fr);
+}
+}
+
+  /* media query for for laptop device  */
+@media screen and  (min-width: 901px) and (max-width:1250px) {
+    header{
+        width: 100%;
+    }
+.cartAndCalculation{
+    width: 900px;
+    margin: 50px auto;
+}
+.carts{
+    width:570px;
+    grid-template-columns: repeat(2, 1fr);
+}
+}
