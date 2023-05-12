@@ -1,0 +1,16 @@
+p{
+    font-size: 20px;
+}
+main{
+    width: 1200px;
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+.article{
+    background-color: rgb(216, 216, 216);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 20px;
+    padding: 20px;
+}

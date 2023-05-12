@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Blogs</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <h2>Welcome to the Awesome Blog site</h2>
+    <main>
+      <section>
+        <article>
+          <div class="article">
+            <h3>What is DOM and what is the purpose of DOM?</h3>
+            <p>
+              The Document Object Model (DOM) is a programming interface for web
+              documents.
+            </p>
+            <p>
+              The DOM defines a standard for accessing documents that allows
+              programs and scripts to dynamically access and update the content,
+              structure, and style of a document."
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="article">
+            <h3>
+              How will you select HTML elements using DOM? Name the DOM methods.
+            </h3>
+            <p>The DOM provides several methods for selecting HTML elements.</p>
+            <p>Here are Five DOM selectors</p>
+            <ul>
+              <li>
+                <strong>getElementById():</strong> it Returns the element with
+                the specified ID.
+              </li>
+              <li>
+                <strong>getElementsByClassName():</strong>it Returns
+                HTMLCollection. we access by the specified class name.
+              </li>
+              <li>
+                <strong> getElementsByTagName():</strong>it Returns
+                HTMLCollection and we access elements with the specified tag
+                name.
+              </li>
+              <li>
+                <strong>querySelector():</strong> Returns the first element that
+                matches a specified CSS selector. if we want to select an
+                element which involved with id. then we need to use '#' before
+                id name. it reuturn single element
+              </li>
+              <li>
+                <strong>querySelectorAll():</strong> it Returns NodeList that
+                matches a specified CSS selector.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <div class="article">
+            <h3>What is event bubble?</h3>
+            <p>
+              Event bubbling is a type of DOM event propagation where the event
+              first triggers on the innermost target element, and then
+              successively triggers on the ancestors of the target element in
+              the same nesting hierarchy till it reaches the outermost DOM
+              element
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="article">
+            <h3>What is a callback function and why will you use it?</h3>
+            <p>
+              A callback function is a function that is passed as an argument to
+              another function. The callback function is then called by the
+              outer function when the outer function is finished executing.
+            </p>
+            <p>
+              Callback functions are often used in asynchronous programming,
+              where the outer function may take some time to execute. By passing
+              a callback function to the outer function, the programmer can
+              specify what should happen when the outer function is finished
+              executing.
+            </p>
+            <p>
+              For example, the following code shows how to use a callback
+              function to print the results of a calculation:
+            </p>
+            <pre>
+              function calculate(x, y, callback) { 
+                var result = x + y;
+              callback(result); 
+            } 
+              calculate(1, 2, function(result) {
+              console.log(result); // Prints 3 });
+            </pre>
+            <p>
+              In this example, the calculate() function takes three arguments:
+              the two numbers to be added, and a callback function. The
+              calculate() function then adds the two numbers and calls the
+              callback function with the result. The callback function is called
+              with the result of the calculation as its argument. In this
+              example, the callback function simply prints the result to the
+              console.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
