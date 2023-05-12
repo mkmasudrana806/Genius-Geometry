@@ -15,6 +15,10 @@ for (const traingle of traingles) {
     if (area) {
       // create element and appendchild to the calculation list
       addToCalculationList(geometryName, area);
+
+      // clear preivous edit icon.since when new cart is clicked then only this cart is edit icon showed and previous edit icon will be hide
+      clearPreviousEditIcon();
+
       const checkEditIcon = isEditIconFound(parentNode);
       if (!checkEditIcon) {
         // add edit icon and checkbox and one paragraph with input field value
@@ -23,11 +27,20 @@ for (const traingle of traingles) {
         // if already found edit then need to just update value of edit icon paralal line paragraph value
         parentNode.querySelector("#first-value").innerText = firstValue;
         parentNode.querySelector("#second-value").innerText = secondValue;
+        addEditIcon(parentNode, firstValue, secondValue);
+        // hideInputField(parentNode);
       }
-      // set event handler to the cancel button in calculation section
+      // clear previous hidden input filed as block
+      clearPreviousHiddenInputField();
+      // newly selected cart input field hide
+      hideInputField(parentNode);
+      // as soon as set editIcon event handler newly cart
       setHandlerEditIcon(parentNode);
-      setHandlerCheckBox(parentNode);
+      // set handler to the check box icon
+      setHandlerCheckBoxIcon(parentNode);
+      // set handler for cancel button by loops
       setHandlerCancelBtn();
+      setHandlerConvertBtn();
     }
   });
 }

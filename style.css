@@ -95,8 +95,12 @@ height:17px;
     display: flex !important;
     justify-content: space-between;
     align-items: center;
+    display: block;
 }
 
+.input-field-none{
+    display: none !important;
+}
 .input-first, .input-second{
 width:80px;
 height: 32px;
